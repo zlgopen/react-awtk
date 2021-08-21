@@ -14,7 +14,9 @@
 - 兼容 AWTK Designer 生成的各种资源。
 - 目前支持 nodejs/web，以后会增加对 quickjs 和 jerryscript 的支持。
 
-## 使用方法
+> 以下以 nodejs 版本为例
+
+## 准备
 
 > 请先参考 [awtk](https://github.com/zlgopen/awtk) 建立对应平台的开发环境。
 
@@ -44,15 +46,7 @@ npm install
 npm run build;
 ```
 
-3. 获取 awtk-web 并编译
-
-```
-git clone https://github.com/zlgopen/awtk-web.git
-```
-
-> 请根据 awtk-web 的文档安装
-
-4. 获取 react-awtk 并编译
+3. 获取 react-awtk 并编译
 
 ```
 git clone https://github.com/zlgopen/react-awtk.git
@@ -84,6 +78,7 @@ python scripts/update_res.py all
 - 运行
 
 ```
+npm run build
 npm run start
 ```
 
@@ -96,7 +91,7 @@ code .
 ## 文档
 
 - [入门指南](docs/get_started.md)
-- [开发笔记](docs/dev_notes.md)
+- [Web 版本使用方法](docs/awtk_web.md)
 
 ## 参考资料：
 

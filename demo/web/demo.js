@@ -35594,7 +35594,10 @@
                   const current =
                     exports.app.history[exports.app.history.length - 1];
                   const Page = current.component;
-                  return React.createElement(Page, { ...current.props });
+                  return React.createElement(
+                    Page,
+                    Object.assign({}, current.props)
+                  );
                 } else {
                   if (this.props.children) {
                     return this.props.children;
@@ -35709,7 +35712,7 @@
         const awtk = require('awtk-js');
         const WidgetFactory_1 = require('./WidgetFactory');
         function init(w, h, title) {
-          //  awtk.init(w || 320, h || 480, title || 'Hello-AWTK', true);
+          awtk.init(w || 320, h || 480, title || 'Hello-AWTK', true);
           //enable system bar
           let win = awtk.TWindow.open('system_bar');
           let close = win.lookup('close', true);
@@ -36003,7 +36006,6 @@
       function(require, module, exports) {
         'use strict';
         Object.defineProperty(exports, '__esModule', { value: true });
-        exports.quit = exports.init = exports.TextElement = exports.TWidgetWrapper = exports.BaseElement = void 0;
         var awtk_1 = require('./awtk');
         Object.defineProperty(exports, 'BaseElement', {
           enumerable: true,
@@ -36243,7 +36245,7 @@
         'use strict';
         Object.defineProperty(exports, '__esModule', { value: true });
         exports.Container = void 0;
-        const Container = (addChild, deleteChild, inChild = addChild) => {
+        exports.Container = (addChild, deleteChild, inChild = addChild) => {
           const children = [];
           const appendChild = child => {
             children.push(child);
@@ -36274,7 +36276,6 @@
             children,
           };
         };
-        exports.Container = Container;
       },
       {},
     ],
@@ -36869,7 +36870,7 @@
         'use strict';
         Object.defineProperty(exports, '__esModule', { value: true });
         exports.TextFuncs = void 0;
-        const TextFuncs = (upText, styleProp) => {
+        exports.TextFuncs = (upText, styleProp) => {
           const children = [];
           const text = [''];
           const updateText = () => {
@@ -36922,7 +36923,6 @@
             text,
           };
         };
-        exports.TextFuncs = TextFuncs;
       },
       {},
     ],
@@ -36985,8 +36985,7 @@
       function(require, module, exports) {
         'use strict';
         Object.defineProperty(exports, '__esModule', { value: true });
-        exports.ProgressBar = exports.Pages = exports.Label = exports.GroupBox = exports.Grid = exports.GridItem = exports.Edit = exports.Dragger = exports.DigitClock = exports.DialogTitle = exports.DialogClient = exports.ComboBoxItem = exports.Column = exports.ColorTile = exports.ClipView = exports.CheckButton = exports.Button = exports.ButtonGroup = exports.AppBar = exports.Vpage = exports.TimeClock = exports.TextSelector = exports.Switch = exports.SlideView = exports.SlideIndicator = exports.SlideMenu = exports.ScrollView = exports.ScrollBar = exports.ListView = exports.ListViewH = exports.ListItem = exports.HscrollLabel = exports.RichText = exports.RichTextView = exports.ProgressCircle = exports.Mledit = exports.LineNumber = exports.LangIndicator = exports.Candidates = exports.ImageValue = exports.ImageAnimation = exports.Gauge = exports.GaugePointer = exports.FileBrowserView = exports.Draggable = exports.ColorPicker = exports.ColorComponent = exports.CanvasWidget = exports.RootText = exports.Root = void 0;
-        exports.RadioButton = exports.ComboBoxEx = exports.SystemBar = exports.SpinBox = exports.Popup = exports.Overlay = exports.Image = exports.ComboBox = exports.CalibrationWin = exports.SvgImage = exports.MutableImage = exports.Keyboard = exports.GifImage = exports.Window = exports.Dialog = exports.View = exports.TabControl = exports.TabButton = exports.TabButtonGroup = exports.Slider = exports.Row = void 0;
+        exports.RadioButton = exports.ComboBoxEx = exports.SystemBar = exports.SpinBox = exports.Popup = exports.Overlay = exports.Image = exports.ComboBox = exports.CalibrationWin = exports.SvgImage = exports.MutableImage = exports.Keyboard = exports.GifImage = exports.Window = exports.Dialog = exports.View = exports.TabControl = exports.TabButton = exports.TabButtonGroup = exports.Slider = exports.Row = exports.ProgressBar = exports.Pages = exports.Label = exports.GroupBox = exports.Grid = exports.GridItem = exports.Edit = exports.Dragger = exports.DigitClock = exports.DialogTitle = exports.DialogClient = exports.ComboBoxItem = exports.Column = exports.ColorTile = exports.ClipView = exports.CheckButton = exports.Button = exports.ButtonGroup = exports.AppBar = exports.Vpage = exports.TimeClock = exports.TextSelector = exports.Switch = exports.SlideView = exports.SlideIndicator = exports.SlideMenu = exports.ScrollView = exports.ScrollBar = exports.ListView = exports.ListViewH = exports.ListItem = exports.HscrollLabel = exports.RichText = exports.RichTextView = exports.ProgressCircle = exports.Mledit = exports.LineNumber = exports.LangIndicator = exports.Candidates = exports.ImageValue = exports.ImageAnimation = exports.Gauge = exports.GaugePointer = exports.FileBrowserView = exports.Draggable = exports.ColorPicker = exports.ColorComponent = exports.CanvasWidget = exports.RootText = exports.Root = void 0;
         const Root_1 = require('./Root');
         exports.Root = Root_1.default;
         const RootText_1 = require('./RootText');
@@ -37208,8 +37207,7 @@
       function(require, module, exports) {
         'use strict';
         Object.defineProperty(exports, '__esModule', { value: true });
-        exports.Grid = exports.GridItem = exports.Edit = exports.Dragger = exports.DigitClock = exports.DialogTitle = exports.DialogClient = exports.ComboBoxItem = exports.Column = exports.ColorTile = exports.ClipView = exports.CheckButton = exports.Button = exports.ButtonGroup = exports.AppBar = exports.Vpage = exports.TimeClock = exports.TextSelector = exports.Switch = exports.SlideView = exports.SlideIndicator = exports.SlideMenu = exports.ScrollView = exports.ScrollBar = exports.ListView = exports.ListViewH = exports.ListItem = exports.HscrollLabel = exports.RichText = exports.RichTextView = exports.ProgressCircle = exports.Mledit = exports.LineNumber = exports.LangIndicator = exports.Candidates = exports.ImageValue = exports.ImageAnimation = exports.Gauge = exports.GaugePointer = exports.FileBrowserView = exports.Draggable = exports.ColorPicker = exports.ColorComponent = exports.CanvasWidget = exports.VirtualText = exports.AppRegistry = exports.RootText = exports.Text = exports.App = exports.app = void 0;
-        exports.RadioButton = exports.ComboBoxEx = exports.SystemBar = exports.SpinBox = exports.Popup = exports.Overlay = exports.Image = exports.ComboBox = exports.CalibrationWin = exports.SvgImage = exports.MutableImage = exports.Keyboard = exports.GifImage = exports.Window = exports.Dialog = exports.View = exports.TabControl = exports.TabButton = exports.TabButtonGroup = exports.Slider = exports.Row = exports.ProgressBar = exports.Pages = exports.Label = exports.GroupBox = void 0;
+        exports.RadioButton = exports.ComboBoxEx = exports.SystemBar = exports.SpinBox = exports.Popup = exports.Overlay = exports.Image = exports.ComboBox = exports.CalibrationWin = exports.SvgImage = exports.MutableImage = exports.Keyboard = exports.GifImage = exports.Window = exports.Dialog = exports.View = exports.TabControl = exports.TabButton = exports.TabButtonGroup = exports.Slider = exports.Row = exports.ProgressBar = exports.Pages = exports.Label = exports.GroupBox = exports.Grid = exports.GridItem = exports.Edit = exports.Dragger = exports.DigitClock = exports.DialogTitle = exports.DialogClient = exports.ComboBoxItem = exports.Column = exports.ColorTile = exports.ClipView = exports.CheckButton = exports.Button = exports.ButtonGroup = exports.AppBar = exports.Vpage = exports.TimeClock = exports.TextSelector = exports.Switch = exports.SlideView = exports.SlideIndicator = exports.SlideMenu = exports.ScrollView = exports.ScrollBar = exports.ListView = exports.ListViewH = exports.ListItem = exports.HscrollLabel = exports.RichText = exports.RichTextView = exports.ProgressCircle = exports.Mledit = exports.LineNumber = exports.LangIndicator = exports.Candidates = exports.ImageValue = exports.ImageAnimation = exports.Gauge = exports.GaugePointer = exports.FileBrowserView = exports.Draggable = exports.ColorPicker = exports.ColorComponent = exports.CanvasWidget = exports.VirtualText = exports.AppRegistry = exports.RootText = exports.Text = exports.App = exports.app = void 0;
         const render_1 = require('./render');
         exports.AppRegistry = render_1.default;
         const App_1 = require('./App');
@@ -37392,11 +37390,17 @@
               null,
               hasTextAncestor =>
                 hasTextAncestor
-                  ? React.createElement(__1.VirtualText, { ...this.props })
+                  ? React.createElement(
+                      __1.VirtualText,
+                      Object.assign({}, this.props)
+                    )
                   : React.createElement(
                       TextAncestor.Provider,
                       { value: true },
-                      React.createElement(__1.RootText, { ...this.props })
+                      React.createElement(
+                        __1.RootText,
+                        Object.assign({}, this.props)
+                      )
                     )
             );
           }
@@ -54559,8 +54563,7 @@ object-assign
                     // Non `Object` object instances with different constructors are not equal.
                     if (
                       objCtor != othCtor &&
-                      'constructor' in object &&
-                      'constructor' in other &&
+                      'constructor' in object && 'constructor' in other &&
                       !(
                         typeof objCtor == 'function' &&
                         objCtor instanceof objCtor &&
@@ -55067,9 +55070,7 @@ object-assign
                     !!length &&
                     (type == 'number' ||
                       (type != 'symbol' && reIsUint.test(value))) &&
-                    value > -1 &&
-                    value % 1 == 0 &&
-                    value < length
+                    value > -1 && value % 1 == 0 && value < length
                   );
                 }
 

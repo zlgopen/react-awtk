@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build-web": "browserify bin/index.js >web/demo.js",
+    "build-web": "npm run build && browserify bin/index.js >web/demo.js",
     "start": "babel-node src/index.js",
     "dev": "webpack --mode=development ",
     "webpackRun": "babel-node dist/index.out.js",

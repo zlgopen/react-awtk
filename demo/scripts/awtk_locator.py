@@ -23,7 +23,7 @@ def locateAWTK(awtk):
     awtk_root = ''
 
     if not os.path.exists(awtk_root):
-        dirnames = ['../'+awtk, '../../'+awtk, '../../../'+awtk, '../node_modules/'+awtk]
+        dirnames = ['../'+awtk, '../../'+awtk, '../../../'+awtk]
         for dirname in dirnames:
             if os.path.exists(dirname):
                 awtk_root = dirname
