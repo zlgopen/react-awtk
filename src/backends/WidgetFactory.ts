@@ -1,0 +1,85 @@
+ 
+import * as awtk from "awtk-js";
+
+let widgetFactory = new Map([
+  ["RADIOBUTTON", awtk.TCheckButton.createRadio as any],
+    ["CANVASWIDGET", awtk.TCanvasWidget.create as any],
+    ["COLORCOMPONENT", awtk.TColorComponent.create as any],
+    ["COLORPICKER", awtk.TColorPicker.create as any],
+    ["DRAGGABLE", awtk.TDraggable.create as any],
+    ["FILEBROWSERVIEW", awtk.TFileBrowserView.create as any],
+    ["GAUGEPOINTER", awtk.TGaugePointer.create as any],
+    ["GAUGE", awtk.TGauge.create as any],
+    ["IMAGEANIMATION", awtk.TImageAnimation.create as any],
+    ["IMAGEVALUE", awtk.TImageValue.create as any],
+    ["CANDIDATES", awtk.TCandidates.create as any],
+    ["LANGINDICATOR", awtk.TLangIndicator.create as any],
+    ["LINENUMBER", awtk.TLineNumber.create as any],
+    ["MLEDIT", awtk.TMledit.create as any],
+    ["PROGRESSCIRCLE", awtk.TProgressCircle.create as any],
+    ["RICHTEXTVIEW", awtk.TRichTextView.create as any],
+    ["RICHTEXT", awtk.TRichText.create as any],
+    ["HSCROLLLABEL", awtk.THscrollLabel.create as any],
+    ["LISTITEM", awtk.TListItem.create as any],
+    ["LISTVIEWH", awtk.TListViewH.create as any],
+    ["LISTVIEW", awtk.TListView.create as any],
+    ["SCROLLBAR", awtk.TScrollBar.create as any],
+    ["SCROLLVIEW", awtk.TScrollView.create as any],
+    ["SLIDEMENU", awtk.TSlideMenu.create as any],
+    ["SLIDEINDICATOR", awtk.TSlideIndicator.create as any],
+    ["SLIDEVIEW", awtk.TSlideView.create as any],
+    ["SWITCH", awtk.TSwitch.create as any],
+    ["TEXTSELECTOR", awtk.TTextSelector.create as any],
+    ["TIMECLOCK", awtk.TTimeClock.create as any],
+    ["VPAGE", awtk.TVpage.create as any],
+    ["APPBAR", awtk.TAppBar.create as any],
+    ["BUTTONGROUP", awtk.TButtonGroup.create as any],
+    ["BUTTON", awtk.TButton.create as any],
+    ["CHECKBUTTON", awtk.TCheckButton.create as any],
+    ["CLIPVIEW", awtk.TClipView.create as any],
+    ["COLORTILE", awtk.TColorTile.create as any],
+    ["COLUMN", awtk.TColumn.create as any],
+    ["COMBOBOXITEM", awtk.TComboBoxItem.create as any],
+    ["DIALOGCLIENT", awtk.TDialogClient.create as any],
+    ["DIALOGTITLE", awtk.TDialogTitle.create as any],
+    ["DIGITCLOCK", awtk.TDigitClock.create as any],
+    ["DRAGGER", awtk.TDragger.create as any],
+    ["EDIT", awtk.TEdit.create as any],
+    ["GRIDITEM", awtk.TGridItem.create as any],
+    ["GRID", awtk.TGrid.create as any],
+    ["GROUPBOX", awtk.TGroupBox.create as any],
+    ["LABEL", awtk.TLabel.create as any],
+    ["PAGES", awtk.TPages.create as any],
+    ["PROGRESSBAR", awtk.TProgressBar.create as any],
+    ["ROW", awtk.TRow.create as any],
+    ["SLIDER", awtk.TSlider.create as any],
+    ["TABBUTTONGROUP", awtk.TTabButtonGroup.create as any],
+    ["TABBUTTON", awtk.TTabButton.create as any],
+    ["TABCONTROL", awtk.TTabControl.create as any],
+    ["VIEW", awtk.TView.create as any],
+    ["DIALOG", awtk.TDialog.create as any],
+    ["WINDOW", awtk.TWindow.create as any],
+    ["GIFIMAGE", awtk.TGifImage.create as any],
+    ["KEYBOARD", awtk.TKeyboard.create as any],
+    ["MUTABLEIMAGE", awtk.TMutableImage.create as any],
+    ["SVGIMAGE", awtk.TSvgImage.create as any],
+    ["CALIBRATIONWIN", awtk.TCalibrationWin.create as any],
+    ["COMBOBOX", awtk.TComboBox.create as any],
+    ["IMAGE", awtk.TImage.create as any],
+    ["OVERLAY", awtk.TOverlay.create as any],
+    ["POPUP", awtk.TPopup.create as any],
+    ["SPINBOX", awtk.TSpinBox.create as any],
+    ["SYSTEMBAR", awtk.TSystemBar.create as any],
+    ["COMBOBOXEX", awtk.TComboBoxEx.create as any],
+
+]);
+
+  export function getCreateWidget(type: string) {
+    let create = widgetFactory.get(type);
+    if(create) {
+        return create;
+    } else {
+        console.log('not found create for ' + type);
+        return awtk.TView.create;
+    }
+}

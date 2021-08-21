@@ -1,0 +1,38 @@
+{
+  "name": "counter",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build-web": "browserify bin/index.js >web/demo.js",
+    "start": "babel-node src/index.js",
+    "dev": "webpack --mode=development ",
+    "webpackRun": "babel-node dist/index.out.js",
+    "build": "babel src/*.js -d bin/ --source-maps"
+  },
+  "author": "",
+  "license": "ISC",
+  "moduleSearchPaths": [
+    "../"
+  ],
+  "dependencies": {
+    "react": "^17.0.2",
+    "react-awtk": "file:.."
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.4.4",
+    "@babel/core": "^7.4.4",
+    "@babel/node": "^7.2.2",
+    "@babel/plugin-proposal-class-properties": "^7.4.4",
+    "@babel/preset-env": "^7.4.4",
+    "@babel/preset-react": "^7.0.0",
+    "@babel/preset-stage-0": "^7.0.0",
+    "babel-loader": "^8.0.6",
+    "browserify": "^17.0.0",
+    "react-devtools": "^4.0.0",
+    "webpack": "^4.41.5",
+    "webpack-cli": "^3.3.10",
+    "webpack-node-externals": "^1.7.2",
+    "ws": "^7.2.1"
+  }
+}

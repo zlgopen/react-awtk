@@ -1,0 +1,14 @@
+{
+  "name": "react-demo",
+  "version": "1.0",
+  "app_type": "js",
+  "assets": "./design",
+  "sources": ["./web/demo.js"],
+  "web": {
+    "react": true,
+    "config": {
+      "fontScale": "0.8",
+      "defaultFont": "sans"
+    }
+  }
+}

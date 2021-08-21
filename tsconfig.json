@@ -1,0 +1,16 @@
+{
+  "compilerOptions": {
+    "outDir": "./bin",
+    "allowJs": true,
+    "strictNullChecks": true,
+    "module": "commonjs",
+    "jsx": "react",
+    "noImplicitAny": false,
+    "target": "ES2020",
+    "declaration": true,
+    "moduleResolution": "node",
+    "allowSyntheticDefaultImports": true,
+    "strict": true
+  },
+  "include": ["./src/**/*"]
+}

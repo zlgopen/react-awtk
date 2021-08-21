@@ -1,0 +1,59 @@
+{
+  "name": "react-awtk",
+  "version": "0.0.1",
+  "description": "React Native for awtk",
+  "main": "bin/index.js",
+  "lint-staged": {
+    "*.{js,json,css,md}": [
+      "prettier --single-quote --trailing-comma es5 --write",
+      "git add"
+    ]
+  },
+  "scripts": {
+    "build": "tsc -b",
+    "prepack": "npm run build",
+    "precommit": "lint-staged"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zlgopen/react-awtk.git"
+  },
+  "author": "Li XianJing<xianjimli@hotmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/zlgopen/react-awtk/issues"
+  },
+  "homepage": "https://github.com/zlgopen/react-awtk#readme",
+  "dependencies": {
+    "lodash": "^4.17.20",
+    "react": "^16.14.0",
+    "react-reconciler": "^0.24.0",
+    "awtk-js": "file:../awtk-nodejs"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.12.13",
+    "@babel/core": "^7.7.7",
+    "@babel/node": "^7.7.7",
+    "@babel/plugin-proposal-class-properties": "^7.7.4",
+    "@babel/preset-env": "^7.7.7",
+    "@babel/preset-react": "^7.7.4",
+    "@babel/preset-stage-0": "^7.0.0",
+    "@types/color": "^3.0.1",
+    "@types/lodash": "^4.14.149",
+    "@types/node-fetch": "^2.5.4",
+    "@types/react": "^16.9.17",
+    "@types/react-reconciler": "^0.18.0",
+    "babel-jest": "^24.9.0",
+    "husky": "^0.14.3",
+    "jest": "^24.9.0",
+    "jest-image-snapshot": "^2.11.1",
+    "jest-util": "^24.9.0",
+    "lint-staged": "^7.1.0",
+    "prettier": "^1.19.1",
+    "react-devtools": "^3.6.3",
+    "typescript": "^3.7.4"
+  },
+  "files": [
+    "bin"
+  ]
+}
