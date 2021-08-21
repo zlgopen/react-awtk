@@ -14,6 +14,64 @@
 - 兼容 AWTK Designer 生成的各种资源。
 - 目前支持 nodejs/web，以后会增加对 quickjs 和 jerryscript 的支持。
 
+示例
+
+```jsx
+export class CheckButtonPage extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      value: 1,
+    };
+  }
+
+  addValue(delta) {
+    let value = this.state.value + delta;
+    this.setState({ value: value % 2 });
+  }
+
+  render() {
+    console.log('CheckButtonPage');
+    return (
+      <Window
+        closeCurrent={this.props.closeCurrent}
+        animHint="htranslate"
+        name={toWindowName(this)}
+        closable="confirm"
+        onRequestCloseWindow={(element, evt) => {
+          console.log(element, evt);
+          if (app.confirm('Confirm', 'Are your sure?')) {
+            app.closeWindow();
+          }
+        }}
+      >
+        <Label x="c" y="100" w="80%" h="30" text={this.state.value} />
+        <CheckButton
+          x="c"
+          y="160"
+          w="100"
+          h="22"
+          text="Click me"
+          value={this.state.value}
+          onChanged={(element, evt) => {
+            this.setState({ value: element.getValue() });
+          }}
+        />
+        <IncDecClose
+          x="c"
+          y="b"
+          w="100%"
+          h="40"
+          onChanged={delta => {
+            this.addValue(delta);
+          }}
+        />
+      </Window>
+    );
+  }
+}
+```
+
 > 以下以 nodejs 版本为例
 
 ## 准备
