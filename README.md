@@ -1,5 +1,7 @@
 # react-awtk
 
+[在线演示](http://zlgawtk.bceapp.com/awtk/demos/react-demo/index.html)
+
 ## 介绍
 
 > 本项目基于 [valence-native](https://valence-native.js.org) 实现，在此对原作者表示感谢。本项目目前处于实验阶段，欢迎大家一起完善。
